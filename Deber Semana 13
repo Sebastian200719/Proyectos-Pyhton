@@ -1,0 +1,23 @@
+# Programa para calcular el total de una compra
+
+# 1. Declarar el método (función)
+def calcular_total(precio, cantidad):
+    # 3. Realizar el cálculo
+    total = precio * cantidad
+    
+    # 4. Retornar el resultado
+    return total
+
+
+# Programa principal
+print("=== Calculadora de compra ===")
+
+# Pedir datos al usuario
+precio = float(input("Ingrese el precio del producto: "))
+cantidad = int(input("Ingrese la cantidad que desea comprar: "))
+
+# 5. Llamar al método
+resultado = calcular_total(precio, cantidad)
+
+# Mostrar resultado en consola
+print("El total de la compra es:", resultado) 
