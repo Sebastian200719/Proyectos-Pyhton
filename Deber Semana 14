@@ -1,0 +1,64 @@
+# ==========================================
+# PROGRAMA: CALCULAR PROMEDIO DE NOTAS
+# ==========================================
+
+# Función para pedir una nota válida
+def pedir_nota(numero_nota):
+    while True:
+        try:
+            nota = float(input(f"Ingrese la nota {numero_nota} (0 a 10): "))
+            
+            # Validar que la nota esté en el rango correcto
+            if nota >= 0 and nota <= 10:
+                return nota
+            else:
+                print("Error: La nota debe estar entre 0 y 10.")
+        
+        except:
+            print("Error: Debe ingresar un número válido.")
+
+
+# Función para calcular el promedio
+def calcular_promedio(n1, n2, n3):
+    suma = n1 + n2 + n3
+    promedio = suma / 3
+    return promedio
+
+
+# Función para determinar si aprueba o reprueba
+def verificar_estado(promedio):
+    if promedio >= 7:
+        return "APROBADO"
+    else:
+        return "REPROBADO"
+
+
+# Función principal del programa
+def main():
+    print("===================================")
+    print("   SISTEMA DE CÁLCULO DE PROMEDIO  ")
+    print("===================================")
+
+    # Pedir notas al usuario
+    nota1 = pedir_nota(1)
+    nota2 = pedir_nota(2)
+    nota3 = pedir_nota(3)
+
+    # Calcular promedio
+    resultado_promedio = calcular_promedio(nota1, nota2, nota3)
+
+    # Verificar estado
+    estado = verificar_estado(resultado_promedio)
+
+    # Mostrar resultados
+    print("\n========= RESULTADOS =========")
+    print(f"Nota 1: {nota1}")
+    print(f"Nota 2: {nota2}")
+    print(f"Nota 3: {nota3}")
+    print(f"Promedio: {resultado_promedio:.2f}")
+    print(f"Estado: {estado}")
+    print("=============================")
+
+
+# Llamada a la función principal
+main()
