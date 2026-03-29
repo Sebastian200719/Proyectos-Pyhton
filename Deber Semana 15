@@ -1,0 +1,59 @@
+# Programa: Lista de estudiantes con datos iniciales
+
+# Crear lista con nombres ya agregados
+estudiantes = ["Juan", "María", "Pedro", "Luis", "Ana"]
+
+# Función para agregar estudiante
+def agregar_estudiante():
+    nombre = input("Ingrese el nombre del estudiante: ")
+    estudiantes.append(nombre)
+    print("✅ Estudiante agregado\n")
+
+# Función para mostrar estudiantes
+def mostrar_estudiantes():
+    print("\n📋 Lista de estudiantes:")
+    for i, nombre in enumerate(estudiantes, start=1):
+        print(f"{i}. {nombre}")
+    print()
+
+# Función para buscar estudiante
+def buscar_estudiante():
+    nombre = input("Ingrese el nombre a buscar: ")
+    if nombre in estudiantes:
+        print("🔍 Estudiante encontrado\n")
+    else:
+        print("❌ Estudiante no encontrado\n")
+
+# Función para eliminar estudiante
+def eliminar_estudiante():
+    nombre = input("Ingrese el nombre a eliminar: ")
+    if nombre in estudiantes:
+        estudiantes.remove(nombre)
+        print("🗑️ Estudiante eliminado\n")
+    else:
+        print("❌ Estudiante no encontrado\n")
+
+# Menú principal
+while True:
+    print("=== MENÚ ===")
+    print("1. Agregar estudiante")
+    print("2. Mostrar estudiantes")
+    print("3. Buscar estudiante")
+    print("4. Eliminar estudiante")
+    print("5. Salir")
+
+    opcion = input("Seleccione una opción: ")
+
+    if opcion == "1":
+        agregar_estudiante()
+    elif opcion == "2":
+        mostrar_estudiantes()
+    elif opcion == "3":
+        buscar_estudiante()
+    elif opcion == "4":
+        eliminar_estudiante()
+    elif opcion == "5":
+        print("👋 Saliendo del programa...")
+        break
+    else:
+        print("⚠️ Opción inválida\n")
