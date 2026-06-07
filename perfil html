@@ -1,0 +1,107 @@
+import zipfile
+
+# ── Contenido HTML ──────────────────────────────────────────
+html = """<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfil Personal - Edy Sebastian Nieves Otero</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f4f8; color: #0f2027; margin: 0; }
+    header {
+      background: linear-gradient(135deg, #0f2027, #2c5364);
+      color: white; text-align: center; padding: 50px 20px 70px;
+    }
+    header h1 { font-size: 2.2rem; margin: 0; }
+    header p  { color: #00b4d8; letter-spacing: 3px; text-transform: uppercase; margin-top: 8px; }
+    .foto {
+      width: 130px; height: 130px; border-radius: 50%;
+      border: 4px solid #00b4d8; margin: 0 auto 20px;
+      background: #1a3a4a; display: flex; align-items: center;
+      justify-content: center; font-size: 60px;
+    }
+    .container { max-width: 860px; margin: -40px auto 50px; padding: 0 20px; }
+    .card {
+      background: white; border-radius: 12px; padding: 30px 35px;
+      margin-bottom: 22px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-left: 5px solid #00b4d8;
+    }
+    h2 { font-size: 1.3rem; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid #f0f4f8; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; }
+    .item label { display: block; font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase; color: #00b4d8; margin-bottom: 4px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+    thead tr { background: linear-gradient(90deg, #0f2027, #2c5364); color: white; }
+    th { padding: 11px 14px; text-align: left; font-size: 0.78rem; text-transform: uppercase; }
+    td { padding: 11px 14px; border-bottom: 1px solid #eef2f5; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f4f9fd; }
+    .badge { background: #0077b6; color: white; border-radius: 20px;
+      padding: 2px 12px; font-size: 0.75rem; font-weight: bold; }
+    blockquote { border-left: 3px solid #00b4d8; padding-left: 18px;
+      font-style: italic; color: #444; line-height: 1.85; }
+    footer { text-align: center; padding: 25px; color: #888; font-size: 0.83rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="foto">📸</div>
+  <h1>Edy Sebastian Nieves Otero</h1>
+  <p>Estudiante · Tecnologías de la Información</p>
+</header>
+
+<main class="container">
+
+  <div class="card">
+    <h2>📋 Datos Personales</h2>
+    <div class="grid">
+      <div class="item"><label>Nombre</label><span>Nieves Otero Edy Sebastian</span></div>
+      <div class="item"><label>Edad</label><span>18 años</span></div>
+      <div class="item"><label>Ciudad</label><span>Archidona, Napo – Ecuador</span></div>
+      <div class="item"><label>Título</label><span>Bachillerato en Ciencias</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🎯 Pasatiempos Favoritos</h2>
+    <table>
+      <thead><tr><th>#</th><th>Pasatiempo</th><th>Descripción</th><th>Frecuencia</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Básquetbol</td><td>Practicar con amigos en la cancha</td><td><span class="badge">Frecuente</span></td></tr>
+        <tr><td>2</td><td>Vóley</td><td>Partidos recreativos y competencias</td><td><span class="badge">Semanal</span></td></tr>
+        <tr><td>3</td><td>Tecnología</td><td>Explorar herramientas digitales</td><td><span class="badge">Diario</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>⚽ Deportes Favoritos</h2>
+    <table>
+      <thead><tr><th>#</th><th>Deporte</th><th>Posición</th><th>Nivel</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>🏀 Básquetbol</td><td>Base / Escolta</td><td><span class="badge">Aficionado</span></td></tr>
+        <tr><td>2</td><td>🏐 Vóley</td><td>Atacante</td><td><span class="badge">Aficionado</span></td></tr>
+        <tr><td>3</td><td>⚽ Fútbol</td><td>Mediocampista</td><td><span class="badge">Recreativo</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🚀 Expectativas de la Carrera</h2>
+    <blockquote>
+      Al estudiar Tecnologías de la Información, espero adquirir los conocimientos necesarios
+      para desarrollarme como profesional en el mundo digital. Mi meta es aprender a gestionar
+      sistemas informáticos, redes y bases de datos. Aspiro a contribuir al desarrollo tecnológico
+      de Archidona y la provincia de Napo, llevando soluciones digitales a mi comunidad.
+    </blockquote>
+  </div>
+
+</main>
+
+<footer>© 2026 · Edy Sebastian Nieves Otero · Tecnologías de la Información</footer>
+
+</body>
+</html>"""
+

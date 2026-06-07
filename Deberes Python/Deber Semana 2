@@ -1,0 +1,97 @@
+# ==================================================
+# TAREA SEMANA 2 - PROGRAMACIÓN ORIENTADA A OBJETOS
+# Autor: Edy Sebastian Nieves Otero
+# Tema: Clase Estudiante
+# ==================================================
+
+class Estudiante:
+    """
+    Clase que representa a un estudiante universitario.
+    """
+
+    def __init__(self, nombre, edad, carrera, promedio):
+        self.nombre = nombre
+        self.edad = edad
+        self.carrera = carrera
+        self.promedio = promedio
+
+    def mostrar_datos(self):
+        """Muestra toda la información del estudiante."""
+        print("\n----- INFORMACIÓN DEL ESTUDIANTE -----")
+        print(f"Nombre: {self.nombre}")
+        print(f"Edad: {self.edad} años")
+        print(f"Carrera: {self.carrera}")
+        print(f"Promedio: {self.promedio}")
+        print("--------------------------------------")
+
+    def estudiar(self):
+        """Simula la acción de estudiar."""
+        print(f"{self.nombre} está estudiando la carrera de {self.carrera}.")
+
+    def evaluar_rendimiento(self):
+        """Determina el rendimiento académico."""
+        if self.promedio >= 9:
+            print(f"{self.nombre} tiene un rendimiento EXCELENTE.")
+        elif self.promedio >= 7:
+            print(f"{self.nombre} tiene un rendimiento BUENO.")
+        else:
+            print(f"{self.nombre} necesita mejorar su rendimiento académico.")
+
+    def cumplir_anios(self):
+        """Incrementa la edad del estudiante."""
+        self.edad += 1
+        print(f"{self.nombre} ha cumplido años. Ahora tiene {self.edad} años.")
+
+    def actualizar_promedio(self, nuevo_promedio):
+        """Actualiza el promedio del estudiante."""
+        self.promedio = nuevo_promedio
+        print(f"El promedio de {self.nombre} ha sido actualizado a {self.promedio}.")
+
+
+# ==================================================
+# CREACIÓN DE OBJETOS
+# ==================================================
+
+estudiante1 = Estudiante(
+    "Edy Sebastian Nieves Otero",
+    19,
+    "Tecnologías de la Información",
+    9.2
+)
+
+estudiante2 = Estudiante(
+    "María Fernanda López",
+    20,
+    "Ingeniería de Software",
+    8.1
+)
+
+# ==================================================
+# PRUEBA DE FUNCIONAMIENTO DEL PROGRAMA
+# ==================================================
+
+print("\n========== SISTEMA DE GESTIÓN DE ESTUDIANTES ==========")
+
+# Datos del estudiante 1
+estudiante1.mostrar_datos()
+estudiante1.estudiar()
+estudiante1.evaluar_rendimiento()
+
+# Datos del estudiante 2
+estudiante2.mostrar_datos()
+estudiante2.estudiar()
+estudiante2.evaluar_rendimiento()
+
+# Actualización de información
+print("\n========== ACTUALIZACIÓN DE DATOS ==========")
+
+estudiante1.cumplir_anios()
+estudiante2.actualizar_promedio(9.5)
+
+# Mostrar nuevamente los datos actualizados
+print("\n========== DATOS ACTUALIZADOS ==========")
+
+estudiante1.mostrar_datos()
+estudiante2.mostrar_datos()
+
+print("\nPrograma ejecutado correctamente.")
