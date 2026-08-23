@@ -1,0 +1,12 @@
+[
+    {
+        "nombre": "Hamburguesa",
+        "precio": 4.5,
+        "categoria": "Comida rápida"
+    },
+    {
+        "nombre": "Jugo de naranja",
+        "precio": 2.0,
+        "categoria": "Bebida"
+    }
+]
